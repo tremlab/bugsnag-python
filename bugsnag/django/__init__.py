@@ -26,7 +26,7 @@ def add_django_request_to_notification(notification):
             notification.context = "%s %s" % (request.method,
                                               request.path_info)
 
-    if hasattr(request, 'user') and request.user.is_authenticated():
+    if hasattr(request, 'user') and request.user.is_authenticated:
         try:
             name = request.user.get_full_name()
             email = getattr(request.user, 'email', None)
